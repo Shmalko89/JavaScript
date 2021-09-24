@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        function decomposeNumber(number) {
+            if (!Number.isInteger(number) || number < 0 || number > 999){
+            console.log("Введенное Вами число не целое, либо выходит за пределы диапозона от 0 до 999!");
+            return {};
+            }
+
+            return {
+                единицы: number % 10,
+                сотни: Math.floor(number / 100),
+                десятки: Math.floor(number / 10) % 10,
+            }
+        }
+
+        let number = +prompt("Введите число от 0 до 999, для разложения его на единицы, десятки, сотни");
+        console.log(decomposeNumber(number));
+        
+    </script>
+</body>
+</html>
